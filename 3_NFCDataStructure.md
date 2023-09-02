@@ -1,7 +1,7 @@
 # Implementing Notification Chain in TCP/IP Stack 🛠️
 
 ## Introduction 🌟
-- Discusses the implementation of a generic notification chain in the files `TCP IP stack/notify` and `notify edge`.
+- Discusses the implementation of a generic notification chain in the files
 - The aim is to create a data structure for notification chains in the TCP/IP stack.
 
 ## Data Structures 📦
@@ -27,34 +27,28 @@
 - Should be generic to suit all types of data and subscribers.
 - Accepts a `void*` type argument and another argument indicating its size in bytes.
 
-## Where to Add Code 📂
-- All the data structures and constants are to be defined in the file `TCP IP stack/notify iftach`.
-
 # Interview Questions and Answers ❓👩‍💼
 
-## Q1: What is a Notification Chain and where is it implemented in the TCP/IP Stack?
+## Q1: What is a Notification Chain?
 ### A1: 
-A Notification Chain is a linked list that holds function pointers and associated keys. It's implemented in the `TCP IP stack/notify` and `notify edge` files.
+A Notification Chain is a linked list that holds function pointers and associated keys. 
 
 ## Q2: What does a Notification Chain Element represent?
 ### A2: 
-A Notification Chain Element is a single node in the Notification Chain linked list. It holds a key, the size of the key, a boolean flag indicating if a key is specified, and a function pointer for callbacks.
+- A Notification Chain Element is a single node in the Notification Chain linked list.
+- It holds a key, the size of the key, a boolean flag indicating if a key is specified, and a function pointer for callbacks.
 
 ## Q3: What is `Max_Notify_Key_Size` and what's its significance?
 ### A3: 
 `Max_Notify_Key_Size` is a constant value that represents the maximum size (in bytes) that can be allocated for storing keys in a Notification Chain Element. It's set to 64 bytes in this example.
 
-## Q4: How is the callback function in Notification Chain Element designed to be generic?
+## Q4: How is the callback function in the Notification Chain Element designed to be generic?
 ### A4: 
 The callback function is designed to accept arguments of `void*` type and another argument specifying its size in bytes. This ensures that it can handle all types of data.
 
 ## Q5: How do you specify if a subscriber is a wildcard subscriber in the Notification Chain Element?
 ### A5: 
 A boolean flag in the Notification Chain Element is used to indicate if a subscriber has specified a key or not. If not, the subscriber is considered a wildcard subscriber.
-
-## Q6: Where should you define all the data structures and constants for the Notification Chain?
-### A6: 
-All the data structures and constants should be defined in the `TCP IP stack/notify iftach` file.
 
 ## Q7: Why does the Notification Chain have a 'Name' field, and what is its use?
 ### A7: 
